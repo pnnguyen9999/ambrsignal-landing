@@ -14,11 +14,11 @@ export function Brand({ compact = false }: BrandProps) {
         >
           AMBR
         </span>
-        <span
+        {/* <span
           className={`text-muted ${compact ? "text-[11px]" : "text-xs"}`}
         >
           Signal
-        </span>
+        </span> */}
       </span>
     </span>
   );

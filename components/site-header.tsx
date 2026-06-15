@@ -11,7 +11,11 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-[72px] max-w-[1300px] items-center justify-between px-5 sm:px-8">
-        <a href="#" aria-label="AMBR Signal home" className="hover:opacity-60">
+        <a
+          href="#"
+          aria-label="AMBR Signal home"
+          // className="transition-colors hover:opacity-60"
+        >
           <Brand />
         </a>
 

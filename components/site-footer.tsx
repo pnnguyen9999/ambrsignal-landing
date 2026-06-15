@@ -15,7 +15,7 @@ export function SiteFooter() {
             <a
               href="#"
               aria-label="AMBR Signal home"
-              className="hover:opacity-60"
+              // className="hover:opacity-60"
             >
               <Brand compact />
             </a>

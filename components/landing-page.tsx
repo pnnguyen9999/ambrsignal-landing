@@ -1,8 +1,12 @@
+'use client'
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowIcon } from "@/components/brand";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import prototypeImage from "@/public/img/ambrsignal-proto.png";
+import { animate } from "animejs";
+import CursorBlinker from "./ui/CursorBlinker";
 
 const features = [
   { number: "01", title: "16-step sequencing" },
@@ -79,13 +83,39 @@ function ProductVisual() {
 }
 
 function Hero() {
+  const baseDisplayText = "Sound machines for signal-driven music.";
+  const [displayText, setDisplayText] = useState("");
+  const animationRef = useRef<any>(null);
+
+  useEffect(() => {
+    const counter = { count: 0 };
+    animationRef.current = animate(counter, {
+      count: baseDisplayText.length,
+      duration: 2000,
+      ease: "inQuad",
+      alternate: true,
+      loop: true,
+      loopDelay: 2000,
+      onUpdate: () => {
+        const latest = Math.round(counter.count);
+        setDisplayText(baseDisplayText.slice(0, latest));
+      },
+    });
+
+    return () => {
+      animationRef.current?.pause();
+    };
+  }, []);
+
   return (
     <section className="overflow-hidden border-b border-line">
       <div className="mx-auto grid max-w-[1300px] gap-12 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-16 lg:pb-32 lg:pt-32">
         <div>
           <SectionLabel>Independent music technology studio</SectionLabel>
-          <h1 className="max-w-[780px] text-[clamp(3.4rem,8vw,6.8rem)] font-medium leading-[0.90] tracking-[-0.072em]">
-            Sound machines for signal-driven music.
+          <h1 className="max-w-[780px] lg:min-h-[400px] text-[clamp(3.4rem,8vw,6.8rem)] font-medium leading-[0.90] tracking-[-0.072em]">
+            {/* Sound machines for signal-driven music. */}
+            {displayText}
+            <CursorBlinker />
           </h1>
           <p className="mt-8 max-w-[650px] text-lg leading-8 text-muted sm:mt-10 sm:text-xl sm:leading-9">
             AMBR Signal builds compact music hardware, embedded instruments, and
@@ -175,9 +205,8 @@ function ProcessSection() {
               </span>
               <span
                 aria-hidden="true"
-                className={`size-2 rounded-full border border-[#999] ${
-                  index < 3 ? "bg-[#111]" : "bg-transparent"
-                }`}
+                className={`size-2 rounded-full border border-[#999] ${index < 3 ? "bg-[#111]" : "bg-transparent"
+                  }`}
               />
             </li>
           ))}
