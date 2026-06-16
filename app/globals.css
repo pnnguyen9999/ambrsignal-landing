@@ -46,6 +46,57 @@ input {
   outline-offset: 3px;
 }
 
+.documents-content h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.documents-content h2 {
+  margin-top: 3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.documents-content p,
+.documents-content ul,
+.documents-content ol {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.documents-content ul,
+.documents-content ol {
+  padding-left: 1.25rem;
+}
+
+.documents-content ul {
+  list-style: disc;
+}
+
+.documents-content ol {
+  list-style: decimal;
+}
+
+.documents-content a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.documents-content code {
+  border: 1px solid var(--border);
+  background: #f7f7f7;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
