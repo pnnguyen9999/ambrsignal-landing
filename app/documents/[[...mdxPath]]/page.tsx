@@ -15,8 +15,9 @@ export async function generateMetadata({
 }: DocumentsPageProps): Promise<Metadata> {
   const { mdxPath = [] } = await params;
   const { metadata } = await importPage(mdxPath);
+  const { title: _title, ...metadataWithoutTitle } = metadata;
 
-  return metadata;
+  return metadataWithoutTitle;
 }
 
 const Wrapper = getMDXComponents().wrapper!;

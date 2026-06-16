@@ -1,13 +1,46 @@
 ---
-title: AMBR Signal Documents
-description: Documentation for AMBR Signal projects and instruments.
+title: AMBR Signal User Manual
+description: User manual for AMBR Signal, a groovebox-style instrument built around sound design, sequencing, arrangement, and performance FX.
 ---
 
-# AMBR Signal Documents
+# AMBR Signal User Manual
 
-Use this space for project notes, product documentation, build logs, and technical references.
+AMBR Signal is a compact groovebox-style instrument for building musical ideas from sound to live performance. The workflow is designed to stay close to how electronic music is usually made on hardware: shape a sound, write a pattern, arrange patterns into a larger structure, then perform the result with hands-on effects.
 
-## Sections
+The machine is built around four layers:
 
-- [Getting Started](/documents/getting-started)
+- Sound design
+- Sequencing
+- Arrangement
+- Performance FX
 
+Each layer has a clear job. Instrument pages handle the raw sound. Sequencer pages handle patterns. Arrange mode handles song structure. FX Banks handle live performance moves.
+
+## The core workflow
+
+AMBR Signal follows this flow:
+
+`Sound Design -> Sequencing -> Arrangement -> Performance FX`
+
+In practice, that means you can start with a blank track, choose or build a sound, write a 16-step pattern, save it into a bank, chain patterns into an arrangement, and use FX Banks to perform the track live.
+
+## Main sections
+
+- [Getting Started](/documents/getting-started): a fast path from blank project to playable loop.
+- [Sound Design](/documents/sound-design): instruments, waveform engines, sampler loading, and envelopes.
+- [Sequencing](/documents/sequencing): banks, patterns, steps, time signatures, and parameter motion.
+- [Arrangement](/documents/arrangement): track pattern chains and song-style playback.
+- [Performance FX](/documents/performance-fx): filter, stutter, vinyl, scratch, and FX Banks.
+- [Workflow Example](/documents/workflow): a complete example session from sound selection to live performance.
+
+## Mental model
+
+Think of AMBR Signal as four connected workspaces rather than one large menu.
+
+Instrument is where a track gets its sound. It can use generated waveforms, loaded samples, envelopes, and other sound controls.
+
+Sequencer is where a track gets its rhythm and notes. Patterns live in banks and can use step data such as trigs, velocity, probability, time signature, and parameter locks.
+
+Arrange is where patterns become a longer piece of music. Each track can have its own pattern chain, so a song can evolve without forcing every track to change at the same time.
+
+FX is where the performance happens. FX Banks collect effects and gestures that can be recalled during playback, making it easy to filter, stutter, stop, scratch, or glitch the music live.

@@ -1,14 +1,99 @@
 ---
 title: Getting Started
-description: Start writing AMBR Signal documentation.
+description: A quick-start guide for making a first loop on AMBR Signal.
 ---
 
 # Getting Started
 
-Add Markdown or MDX files to the `content` directory. Nextra publishes them under `/documents`.
+This guide walks through the basic AMBR Signal workflow: choose a track, design a sound, write a pattern, save it to a bank, arrange patterns, and perform with FX.
 
-## File routing
+The goal is not to explain every parameter. The goal is to understand the shape of the machine.
 
-- `content/index.mdx` renders at `/documents`.
-- `content/getting-started.mdx` renders at `/documents/getting-started`.
-- `content/_meta.ts` controls the sidebar labels and order.
+## 1. Choose a track
+
+Start from the Home menu and choose the track you want to work on.
+
+A track is the main container for a sound and its sequence. In a typical session, each track might represent a drum voice, bass line, chord part, sample, or texture.
+
+## 2. Open Instrument
+
+Enter the Instrument page for the selected track.
+
+Use Instrument to choose the sound source:
+
+- Select a waveform such as sine, saw, square, wavetable, or noise.
+- Load a sample from storage when using the sampler engine.
+- Shape the sound with ADSR: attack, decay, sustain, and release.
+
+Instrument is where the sound begins. If the track does not feel right, start here before editing the pattern.
+
+## 3. Create a 16-step pattern
+
+Open Sequencer and select a bank and pattern slot.
+
+For a first loop, use a 16-step pattern in 4/4. Add trigs where the track should play. Then adjust note, velocity, and timing as needed.
+
+Example:
+
+- Kick on steps 1, 5, 9, and 13.
+- Snare on steps 5 and 13.
+- Hi-hat on every other step.
+- Bass notes on selected steps around the kick.
+
+## 4. Set the time signature
+
+Most patterns can start in 4/4, but AMBR Signal also supports the idea of alternate meters.
+
+Use time signatures such as 7/8 or 5/4 when you want a track to cycle in a less regular way. This can create evolving grooves when several tracks loop together.
+
+## 5. Add movement
+
+Once the pattern plays correctly, add movement.
+
+Useful movement sources include:
+
+- Velocity changes for dynamics.
+- Probability for variation.
+- Parameter locks for per-step sound changes.
+- FX automation for moments that should repeat with the pattern.
+
+Use movement lightly at first. A small change on one or two steps can make a loop feel alive.
+
+## 6. Save the pattern to a bank
+
+Save the pattern into a bank slot.
+
+A bank is a collection of related patterns. For example, Bank A can hold the main groove, a variation, a breakdown, and a fill.
+
+Example:
+
+- Pattern 1: main groove.
+- Pattern 2: main groove with extra percussion.
+- Pattern 3: breakdown.
+- Pattern 4: fill or transition.
+
+## 7. Arrange the song
+
+Open Arrange mode when you want to move beyond looping one pattern.
+
+Choose a track, select a pattern, and place it in the track timeline. Repeat this for each track until the song has a shape.
+
+Example:
+
+- Track 1: Pattern 1 -> Pattern 1 -> Pattern 4 -> Pattern 3.
+- Track 2: Pattern 1 -> Pattern 2 -> Pattern 2 -> Pattern 3.
+- Track 3: Pattern 3 -> Pattern 4 -> Pattern 1 -> Pattern 1.
+
+## 8. Perform with FX Banks
+
+Open FX when the loop or arrangement is playing.
+
+FX Banks are meant for live performance. Use them to recall effect combinations quickly:
+
+- FX Bank 1: filter and delay.
+- FX Bank 2: vinyl stop and reverb.
+- FX Bank 3: stutter and bitcrush.
+- FX Bank 4: scratch and tape wobble.
+- FX Bank 5: glitch combo.
+
+The performance layer is where AMBR Signal becomes more than a sequencer. It lets you play the arrangement as an instrument.

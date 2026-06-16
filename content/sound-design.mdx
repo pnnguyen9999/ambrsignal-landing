@@ -1,0 +1,78 @@
+---
+title: Sound Design
+description: How to create and shape track sounds on AMBR Signal.
+---
+
+# Sound Design
+
+Sound design happens in Instrument. This is where each track gets its source sound, envelope, and basic character before it enters the sequencer.
+
+The simplest way to understand Instrument is this:
+
+Instrument creates the raw sound. Sequencer decides when that sound plays.
+
+## Instrument page
+
+From the Home menu, choose Instrument for the selected track. The Instrument page should answer one question: what does this track sound like?
+
+Each track can use an engine such as a waveform engine or sampler engine. The exact controls can change by engine, but the purpose stays the same.
+
+## Waveform engine
+
+The waveform engine is for synthesized tones.
+
+Common waveform choices include:
+
+- Sine for clean basses, sub tones, and simple melodic parts.
+- Saw for bright basses, leads, and chords.
+- Square for hollow basses, pulse sounds, and chip-style parts.
+- Wavetable for animated digital tones.
+- Noise for percussion, hats, risers, and texture.
+
+Start with the simplest waveform that matches the role of the track. A kick, bass, chord, or noise layer should each begin with a clear purpose.
+
+## Sampler loading
+
+The sampler engine is for playing audio files.
+
+Use sampler loading when the sound should come from a recorded source, drum hit, vocal cut, field recording, or one-shot texture.
+
+A practical sample workflow:
+
+1. Choose the track.
+2. Open Instrument.
+3. Select the sampler engine.
+4. Load a sample from storage.
+5. Adjust the envelope so the sample starts and ends cleanly.
+
+Sample loading is a core concept, but exact storage, browser, and file management behavior may depend on the current firmware build.
+
+## ADSR envelope
+
+ADSR shapes the volume of the sound over time.
+
+- Attack controls how quickly the sound starts.
+- Decay controls how quickly the sound falls after the attack.
+- Sustain controls the held level while the note continues.
+- Release controls how long the sound fades after the note ends.
+
+Short attack and short release are useful for drums and tight sequences. Longer attack and release are useful for pads, swells, and ambient parts.
+
+## Track sound settings
+
+Additional track sound settings can include pitch, filter envelope, LFO, mono/poly behavior, choke groups, and related performance behavior.
+
+These controls should be treated as part of the same sound design layer. They decide how the track behaves before it is sequenced or arranged.
+
+## Practical example
+
+To make a simple bass track:
+
+1. Select Track 2.
+2. Open Instrument.
+3. Choose a saw or square waveform.
+4. Use a short attack and medium release.
+5. Add a filter or envelope movement if available.
+6. Return to Sequencer and write the bass pattern.
+
+If the bass does not sit well in the groove, return to Instrument before changing the whole pattern.

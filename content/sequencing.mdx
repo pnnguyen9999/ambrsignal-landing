@@ -1,0 +1,83 @@
+---
+title: Sequencing
+description: How banks, patterns, steps, time signatures, and motion work on AMBR Signal.
+---
+
+# Sequencing
+
+Sequencing is where musical events are written into patterns. A pattern decides when a track plays, what note it plays, and how each step behaves.
+
+The core sequencer structure is:
+
+`Bank -> Pattern -> Track -> Steps`
+
+## Banks and patterns
+
+A bank stores a group of patterns.
+
+One useful way to organize a bank is:
+
+- Pattern 1: main idea.
+- Pattern 2: variation.
+- Pattern 3: breakdown.
+- Pattern 4: fill or transition.
+
+This makes it easy to stay inside one bank while developing a section of a song.
+
+## 16-step patterns
+
+A 16-step pattern is the default groovebox starting point. In 4/4, each step usually represents a sixteenth note.
+
+For a first pattern, keep the structure simple:
+
+- Place the main hits.
+- Add secondary notes.
+- Adjust velocity for feel.
+- Add probability or parameter locks only after the pattern works on its own.
+
+## Step data
+
+Each step can hold musical information. Depending on the current firmware build, this can include:
+
+- Trig: whether the step plays.
+- Note: pitch or sample selection.
+- Velocity: how hard the step plays.
+- Probability: the chance that the step will play.
+- Timing: small timing shifts for feel.
+
+The most important step value is the trig. If no trig is present, the track does not play on that step.
+
+## Time signatures
+
+Patterns can use time signatures such as 4/4, 7/8, or 5/4.
+
+Use 4/4 for most standard grooves. Use odd or shorter meters when you want a track to loop against the others and create evolving rhythm.
+
+Example:
+
+- Track 1 drums: 16 steps in 4/4.
+- Track 2 bass: 16 steps in 4/4.
+- Track 3 melody: 14 steps or 7/8 feel.
+- Track 4 texture: 10-step phrase or 5/4 feel.
+
+When different tracks cycle differently, the full groove can change over time without needing a long arrangement.
+
+## Parameter locks
+
+Parameter locks are per-step changes to sound or effect parameters.
+
+For example, one bass step can have a brighter filter setting, or one snare hit can trigger a longer decay. This lets a pattern contain sound design movement without duplicating the whole pattern.
+
+Use parameter locks for intentional moments:
+
+- A brighter note before a transition.
+- A shorter decay on ghost notes.
+- A filter accent on the last step of a phrase.
+
+## FX automation
+
+FX automation stores repeatable effect movement inside a pattern.
+
+This is different from Performance FX. Pattern automation repeats as part of the sequence. Performance FX is played live on top.
+
+Use automation when the same motion should happen every time the pattern loops. Use FX Banks when the motion should be performed by hand.
