@@ -3,6 +3,10 @@ import Link from "next/link";
 import type { PageMapItem } from "nextra";
 import { getPageMap } from "nextra/page-map";
 import { Brand } from "@/components/brand";
+import {
+  DocumentsNav,
+  type DocumentsNavItem,
+} from "@/components/documents-nav";
 import { DocumentsSearch } from "@/components/documents-search";
 
 export const metadata = {
@@ -24,38 +28,26 @@ function getItemTitle(item: PageMapItem) {
   return null;
 }
 
-function DocumentsNav({ pageMap }: { pageMap: PageMapItem[] }) {
-  return (
-    <nav aria-label="Documents" className="space-y-1 text-sm">
-      {pageMap.map((item, index) => {
-        if (!("route" in item)) {
-          return null;
-        }
+function getNavItems(pageMap: PageMapItem[]): DocumentsNavItem[] {
+  return pageMap.flatMap((item) => {
+    if (!("route" in item)) {
+      return [];
+    }
 
-        const title = getItemTitle(item);
+    const title = getItemTitle(item);
 
-        if (!title) {
-          return null;
-        }
+    if (!title) {
+      return [];
+    }
 
-        return (
-          <div key={`${item.route}-${index}`}>
-            <Link
-              href={item.route}
-              className="block border-l border-line px-3 py-2 text-muted transition hover:border-foreground hover:text-foreground"
-            >
-              {title}
-            </Link>
-            {"children" in item && item.children.length > 0 ? (
-              <div className="ml-3">
-                <DocumentsNav pageMap={item.children} />
-              </div>
-            ) : null}
-          </div>
-        );
-      })}
-    </nav>
-  );
+    return [
+      {
+        title,
+        route: item.route,
+        children: "children" in item ? getNavItems(item.children) : undefined,
+      },
+    ];
+  });
 }
 
 export default async function DocumentsLayout({
@@ -64,6 +56,7 @@ export default async function DocumentsLayout({
   children: ReactNode;
 }) {
   const pageMap = await getPageMap("/documents");
+  const navItems = getNavItems(pageMap);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -83,7 +76,7 @@ export default async function DocumentsLayout({
           className="border-b border-line py-6 lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] lg:border-b-0 lg:border-r"
           data-pagefind-ignore="all"
         >
-          <DocumentsNav pageMap={pageMap} />
+          <DocumentsNav items={navItems} />
         </aside>
         {children}
       </div>

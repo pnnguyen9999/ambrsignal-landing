@@ -51,6 +51,32 @@ input {
   min-width: 0;
 }
 
+.documents-nav {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.documents-nav-link {
+  display: block;
+  border-left: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.55rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.documents-nav-link:hover,
+.documents-nav-link[aria-current="page"] {
+  border-color: var(--foreground);
+  color: var(--foreground);
+}
+
+.documents-nav-link[aria-current="page"] {
+  background: #f6f6f6;
+  font-weight: 600;
+}
+
 .documents-search {
   position: relative;
   display: flex;
