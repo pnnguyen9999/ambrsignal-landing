@@ -1,6 +1,7 @@
 import { Brand } from "@/components/brand";
 
 const navigation = [
+  { label: "Documents", href: "/documents" },
   { label: "Product", href: "#product" },
   { label: "Process", href: "#process" },
   { label: "Updates", href: "#updates" },
@@ -14,7 +15,7 @@ export function SiteHeader() {
         <a
           href="#"
           aria-label="AMBR Signal home"
-          // className="transition-colors hover:opacity-60"
+        // className="transition-colors hover:opacity-60"
         >
           <Brand />
         </a>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { PageMapItem } from "nextra";
 import { getPageMap } from "nextra/page-map";
 import { Brand } from "@/components/brand";
+import { DocumentsSearch } from "@/components/documents-search";
 
 export const metadata = {
   title: "Documents",
@@ -66,15 +67,22 @@ export default async function DocumentsLayout({
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-20 border-b border-line bg-background/90 backdrop-blur">
+      <header
+        className="sticky top-0 z-20 border-b border-line bg-background/90 backdrop-blur"
+        data-pagefind-ignore="all"
+      >
         <div className="flex h-[72px] items-center justify-between px-5 sm:px-8">
           <Link href="/" aria-label="AMBR Signal home">
             <Brand />
           </Link>
+          <DocumentsSearch />
         </div>
       </header>
       <div className="grid lg:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="border-b border-line py-6 lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] lg:border-b-0 lg:border-r">
+        <aside
+          className="border-b border-line py-6 lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] lg:border-b-0 lg:border-r"
+          data-pagefind-ignore="all"
+        >
           <DocumentsNav pageMap={pageMap} />
         </aside>
         {children}

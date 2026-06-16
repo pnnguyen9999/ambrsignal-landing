@@ -1,11 +1,15 @@
 import type { MDXComponents } from "nextra/mdx-components";
 import { useMDXComponents as getNextraComponents } from "nextra/mdx-components";
+import { DocumentsToc } from "@/components/documents-toc";
 
-const wrapper: MDXComponents["wrapper"] = ({ children }) => {
+const wrapper: MDXComponents["wrapper"] = ({ children, toc }) => {
   return (
-    <article className="documents-content min-w-0 px-5 py-12 sm:px-8 lg:px-14">
-      {children}
-    </article>
+    <div className="documents-page-grid">
+      <article className="documents-content min-w-0 px-5 py-12 sm:px-8 lg:px-14">
+        <main data-pagefind-body>{children}</main>
+      </article>
+      <DocumentsToc toc={toc} />
+    </div>
   );
 };
 
